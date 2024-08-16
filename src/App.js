@@ -1,9 +1,10 @@
 // App.js
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import PreFetchLink from './components/PreFetchLink';
 
-const Home = lazy(() => import('./components/Home'));
-const Dashboard = lazy(() => import('./components/Dashboard'));
+const Home = lazy(() => import(/* webpackPrefetch: true */ './components/Home'));
+const Dashboard = lazy(() => import(/* webpackPrefetch: true */ './components/Dashboard'));
 const Profile = lazy(() => import('./components/Profile'));
 const Settings = lazy(() => import('./components/Settings'));
 const AdvancedFeatures = lazy(() => import('./components/AdvancedFeatures'));
@@ -15,11 +16,41 @@ function App() {
       <div>
         <nav>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/dashboard">Dashboard</Link></li>
-            <li><Link to="/profile">Profile</Link></li>
-            <li><Link to="/settings">Settings</Link></li>
-            <li><Link to="/advanced">Advanced Features</Link></li>
+            <li>
+              <PreFetchLink
+                to="/"
+                prefetch={() => import('./components/Home')}>
+                Home
+              </PreFetchLink>
+            </li>
+            <li>
+              <PreFetchLink
+                to="/dashboard"
+                prefetch={() => import('./components/Dashboard')}>
+                Dashboard
+              </PreFetchLink>
+            </li>
+            <li>
+              <PreFetchLink
+                to="/profile"
+                prefetch={() => import('./components/Profile')}>
+                Profile
+              </PreFetchLink>
+            </li>
+            <li>
+              <PreFetchLink
+                to="/settings"
+                prefetch={() => import('./components/Settings')}>
+                Settings
+              </PreFetchLink>
+            </li>
+            <li>
+              <PreFetchLink
+                to="/advanced" p
+                refetch={() => import('./components/AdvancedFeatures')}>
+                Advanced Features
+              </PreFetchLink>
+            </li>
           </ul>
         </nav>
 
