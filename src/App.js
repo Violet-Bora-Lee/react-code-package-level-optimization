@@ -1,9 +1,10 @@
 // App.js
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import Dashboard from './components/Dashboard';
-import Profile from './components/Profile';
+
+const Home = lazy(() => import('./components/Home'));
+const Dashboard = lazy(() => import('./components/Dashboard'));
+const Profile = lazy(() => import('./components/Profile'));
 
 function App() {
   return (
@@ -17,11 +18,13 @@ function App() {
           </ul>
         </nav>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </Suspense>
       </div>
     </Router>
   );
