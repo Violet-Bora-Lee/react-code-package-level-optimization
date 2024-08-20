@@ -1,7 +1,8 @@
 {
   "name": "code-splitting-demo",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Frontend Performance Optimalization Demo",
+  "author": "Bora Lee with Claude",
   "dependencies": {
     "chart.js": "^4.3.0",
     "react": "^18.2.0",

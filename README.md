@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# 프론트엔드 성능 최적화 데모
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 저장소는 React 기반 프론트엔드 애플리케이션의 성능 최적화를 시연하기 위해 만들어졌습니다. 다양한 최적화 기법을 적용하여 애플리케이션의 성능을 향상시키는 방법을 각 커밋을 통해 확인해보세요.
 
-## Available Scripts
+- 적용된 기법
+  - 동적 라우팅을 이용한 코드 분할(Code Splitting with Dynamic Routing)
+    - 커밋: [a789455](https://github.com/Violet-Bora-Lee/react-code-package-level-optimization/commit/a7894559217e086941c8edff3d92c34b30271eb2)
+  - `package.json` 최적화(`dependencies`, `devDependencies`)
+    - 커밋: [ef2950d](https://github.com/Violet-Bora-Lee/react-code-package-level-optimization/commit/ef2950de888129d9a6b337b0f6167ed89fe2a93c)
+  - 트리쉐이킹(Use tree shaking by importing only necessary code)
+    - 커밋: [1df2740](https://github.com/Violet-Bora-Lee/react-code-package-level-optimization/commit/1df274004acc9d7356e23e4c813639fd74f1d285)
+  - 웹팩 설정으로 JS 파일 압축하기(Webpack configuration for advanced JS minification)
+    - 커밋: [7dac277](https://github.com/Violet-Bora-Lee/react-code-package-level-optimization/commit/7dac2771b902b5017e416f9ced44b4f827a9aa5d)
+  - 다양한 프리페칭 전략(Implement pre-fetching strategies)
+    - 커밋: [f838d69](https://github.com/Violet-Bora-Lee/react-code-package-level-optimization/commit/f838d696501d00e695c040542f8cde26d8a2989b)
 
-In the project directory, you can run:
+![프론트엔드_성능_최적화](https://github.com/Violet-Bora-Lee/react-code-package-level-optimization/blob/3487dae54668cc07951f6796037104fcdde21d00/frontend-performance.gif)
 
-### `npm start`
+## 시작하기
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)으로 부트스트랩되었습니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 필수 조건
 
-### `npm test`
+- Node.js (>= 14.x)
+- npm (>= 6.x) 또는 yarn (>= 1.x)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 설치
 
-### `npm run build`
+프로젝트를 클론하고 필요한 패키지를 설치합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+git clone https://github.com/Violet-Bora-Lee/react-code-package-level-optimization.git
+cd react-code-package-level-optimization
+npm install (또는 yarn install)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 실행
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+npm start (또는 yarn start)
+```
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 분석 방법
+```sh
+npm run build:analyze (또는 yarn run build:analyze)
+```
